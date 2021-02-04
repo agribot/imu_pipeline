@@ -109,7 +109,7 @@ namespace tf2
     transformCovariance(imu_in.linear_acceleration_covariance, imu_out.linear_acceleration_covariance, r);
 
     Eigen::Quaternion<double> orientation = r * Eigen::Quaternion<double>(
-        imu_in.orientation.w, imu_in.orientation.x, imu_in.orientation.y, imu_in.orientation.z) * r.inverse();
+        imu_in.orientation.w, imu_in.orientation.x, imu_in.orientation.y, imu_in.orientation.z);
 
     imu_out.orientation.w = orientation.w();
     imu_out.orientation.x = orientation.x();
